@@ -61,9 +61,3 @@ class MailParse:
                     return re.findall(re_content,content)[re_idx]
         except Exception as e:
             raise ValueError(f"parse failed {email}:{e}")
-
-
-if __name__ == '__main__':
-    # print(MailParse("outlook").login("",""))
-    print(MailParse("outlook").parse(["Inbox","Junk"],"community@minima.global","","",'Welcome to the Minima Incentive program',
-                                     r"<a.+?href=\"(.+?)\".*>",1))
